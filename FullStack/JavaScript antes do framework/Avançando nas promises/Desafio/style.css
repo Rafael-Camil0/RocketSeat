@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;    
+}
+:root{
+    font-size: 62.5%;
+    --bg-color:#000000;
+    --bg-color-bt:#065E7C;
+    --bg-header-table:#092D38;
+    --bg-input:#06181C;
+    --txt-input-color:#7C7C8A;
+    --overflow-color-table: #4A808C;
+    --txt-button-delete:#F75A68;
+    --txt-button-search-hover:#065E7C;
+    --bg-button-seach-hover:#ffff;
+    --txt-button-search:#ffff;
+    --txt-color:#E1E1E6;
+    --bg-row-par:#030b0dff;
+    --bg-row-impar:#06181cff;
+
+
+}
+body{
+    font-size: 1.2rem;
+    padding: 10rem clamp(3rem,13rem,16rem);
+    background-color: var(--bg-color);
+}
+body, input,button {
+    font-family: "Roboto",sans-serif;
+}
+header nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.search{
+    display: flex;
+    align-items: center;
+    gap:8px
+}
+.search button,.search input {
+    height: 4.8rem;
+
+}
+.search input{
+    background-color: var(--bg-input);
+    color: var(--txt-input-color);
+
+    width: clamp(30rem,46rem,55rem);
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+
+}
+.search button{
+    width: clamp(12rem,17rem,18rem);
+   
+    background-color: var(--bg-color-bt);
+    
+    color: var(--txt-color);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+
+    border: none;
+
+    border-radius:5px;
+}
+table td {
+    padding: 1.5rem;
+}
+
+table {
+    margin-top: 8.7rem;
+    width: 100%;
+ 
+    color: var(--txt-color);
+    font-weight: 400;
+    font-size: 2.0rem;
+    line-height: 3.2rem;
+
+    border-collapse: collapse;
+
+    text-align: left;
+   
+    outline: 1px solid #fff;
+    border-radius: 12px;
+} 
+
+table thead{
+    background-color: var(--bg-header-table);
+  
+}
+
+table th:first-child {
+    border-top-left-radius: 1.2rem;
+  }
+
+  table th:last-child {
+    border-top-right-radius: 1.2rem;
+   
+  }
+table thead th{
+    font-weight: bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    padding: 1.5rem;
+
+
+}
+
+
+table .user {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:.8rem;
+   
+}
+
+
+.user p {
+ font-weight: bold;
+}
+
+
+table .user img{
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 50%;
+   
+}
+.remover{
+
+
+    font-weight: bold;
+    font-size: 2.0rem;
+    line-height: 3.2rem;
+    
+
+    color: var(--txt-button-delete);
+
+    background-color: transparent;
+
+    border: none;
+}
+button  {
+    cursor: pointer;
+  }
+  
+
+tbody td {
+    border:none
+}
+
+tbody tr:nth-child(even){
+    background-color: var(--bg-row-impar);
+    border-top: .1rem solid white;
+    border-bottom: .1rem solid white;
+}
+tbody tr:last-child{
+    border-bottom:none ;
+}

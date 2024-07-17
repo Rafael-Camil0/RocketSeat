@@ -1,0 +1,249 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+:root{
+  font-size: 62.5%;
+  --purple--500:#065E7C;
+  --purple--300:#387E96;
+  --white: #fff;
+  --black-500:#202024;
+  --black-300:#121214;
+  font-family: "Mulish", sans-serif;
+}
+body,html,input,p,h1,h2{
+  font-family: "Mulish", sans-serif;
+  line-height: 1.6;
+}
+
+.page{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  
+}
+.page header{
+  width: 100vw;
+  background-color: var(--purple--500);
+  --startY:-100%;
+  /* animation: move  1s ; */
+}
+
+ nav input{
+  width: 100%;
+  padding: 1.4rem 1.2rem ;
+  border: none;
+  background-color: var(--purple--300);
+  color: var(--white);
+  border-radius: 4px ;
+
+  
+ 
+}
+nav input::placeholder{
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+nav input:focus::placeholder{
+    color: transparent;
+}
+nav input:focus{
+
+  border: none;
+  outline: none;
+  filter: brightness(1.2);
+}
+.page header nav{
+
+  padding:1.6rem 2.8rem  ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2.5rem;
+}
+
+.page header img{
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+
+}
+.post .header img:nth-child(1){
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.post .content, .page .posts-wrapper{
+ padding: 0 2.4rem 0 2.2rem; 
+}
+.post .content{
+  margin-top: 2.7rem;
+  margin-bottom: 3.4rem;
+}
+.post .content h1{
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: .8rem;
+ 
+
+}
+.post .content .button{
+  margin-bottom: 3.2rem;
+}
+.post .content .button button{
+    background-color: var(--purple--500);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: none;
+}
+.post .content .button button+button{
+  margin-left:1.2rem ;
+}
+main .post .content > p {
+  font-size: 1.2rem;
+}
+ .posts-wrapper h1 {
+ font-size: 2.4rem;
+ font-weight: bold;
+ margin-bottom: 3.2rem;
+}
+.posts-wrapper .mini-post{
+  --delay: 4s
+  display: flex;
+  gap: 1.6rem;
+  /* animation:appear var(--delay) ; */
+  
+} 
+.posts-wrapper .mini-post p{
+  font-size: 1.4rem;
+}
+.posts-wrapper .mini-post img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.posts-wrapper .mini-post + .mini-post{
+  margin-top: 3.2rem ;
+}
+
+footer{
+  --startY:100%;
+  margin-top:4.8rem ;
+  min-height:5.5rem ;
+  width: 100%;
+  background-color: var(--purple--300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* animation: move 1s; */
+}
+footer p {
+
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--white);
+}
+
+@media(min-width: 700px){
+  .page{
+    display: grid;
+    grid-template-areas: 
+    "A A A A A"
+    "B B B B B"
+    ;
+    row-gap: 4.4rem ;
+    height: 100vh;
+  }
+  .post .content{
+    height: 100%;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .post .content h1{
+    display: inline ;
+    margin-bottom: 31px;
+  }
+  .post .content .button {
+    display: inline ;
+    margin-left: 352px;
+  }
+  .post .content p{
+    padding-top:31px ;
+    font-size: 16px;
+  }
+  .page header {
+    grid-area: A;
+    padding: 0 11.2rem;
+  }
+  .page main{
+    grid-area: B;
+    display: grid;
+    grid-template-areas: 
+    "B B B C C"
+    "D D D D D"
+    ;
+    row-gap: 3.9rem;
+    align-items: start;
+  
+  }
+
+  main .post{
+    grid-area: B;
+   padding-left: 8rem;
+   
+  }
+
+  .page .posts-wrapper{
+    padding: 0;
+    padding-left:  32px;
+    margin-right: 8rem;
+    max-height: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .posts-wrapper h1{
+    max-height: 32px;
+  }
+  
+  .posts-wrapper .mini-post{
+    max-height: 85px;
+    max-width:382px ;
+  }
+  .posts-wrapper .mini-post p{
+    font-size: 1rem;
+  }
+  .posts-wrapper .mini-post+.mini-post{
+    margin-top: 0;
+   
+  }
+  main .posts-wrapper h1{
+    margin: 0;
+  }
+  main footer{
+    grid-area: D;
+    margin: 0;
+    height: 100%;
+  }
+  
+}
+
+
+@keyframes move {
+  from {
+    transform: translateY(var(--startY));
+  }
+}
+
+@keyframes appear{
+  from{
+    transform: translateY(-100%);
+  }
+}
